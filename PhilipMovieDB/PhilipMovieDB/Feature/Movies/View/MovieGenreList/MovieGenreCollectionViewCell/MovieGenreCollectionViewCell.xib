@@ -47,16 +47,29 @@
                             <constraint firstAttribute="trailing" secondItem="47U-4L-vb1" secondAttribute="trailing" constant="8" id="rPm-8H-6oj"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhr-Tw-udR">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="75"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="cellTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="82s-ub-fqc"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="bhr-Tw-udR" secondAttribute="trailing" id="DHk-ux-AJ1"/>
+                <constraint firstAttribute="bottom" secondItem="bhr-Tw-udR" secondAttribute="bottom" id="PRB-cy-eGK"/>
+                <constraint firstItem="bhr-Tw-udR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PiG-nt-dBt"/>
                 <constraint firstAttribute="bottom" secondItem="8ix-wh-ERD" secondAttribute="bottom" id="QAh-uU-tEs"/>
                 <constraint firstItem="8ix-wh-ERD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="k7x-Bm-ck0"/>
+                <constraint firstItem="bhr-Tw-udR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="t9H-B2-WlX"/>
                 <constraint firstItem="8ix-wh-ERD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yG6-5x-SNq"/>
                 <constraint firstAttribute="trailing" secondItem="8ix-wh-ERD" secondAttribute="trailing" id="yKS-xK-Hf0"/>
             </constraints>
             <connections>
+                <outlet property="buttonCell" destination="bhr-Tw-udR" id="ttn-Fw-UiF"/>
                 <outlet property="labelGenreName" destination="5B1-nI-fNT" id="LrE-Qr-YCg"/>
                 <outlet property="labelGradientView" destination="47U-4L-vb1" id="O2T-qK-Uyo"/>
             </connections>

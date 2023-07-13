@@ -42,18 +42,10 @@ class MovieGenreListViewController: UIViewController {
     private func bindUI() {
         self.disposeBag.insert(
             presenter.getTrendingMovies()
-                .drive(self.collectionView.rx.items(cellIdentifier: MovieGenreCollectionViewCell.identifier, cellType: MovieGenreCollectionViewCell.self)) { _, data, cell in
-                    
-                    
-                cell.setData(data)
-            },
-            self.collectionView.rx.modelSelected(MovieGenre.self).asDriver().drive(onNext: { [weak self] data in
-                print(data)
-//                let viewController = WhatsOnDetailViewController(whatsOn: whatsOn)
-//                viewController.hidesBottomBarWhenPushed = true
-//                self?.navigationController?.isNavigationBarHidden = false
-//                self?.navigationController?.pushViewController(viewController, animated: true)
-            })
+                .drive(self.collectionView.rx.items(cellIdentifier: MovieGenreCollectionViewCell.identifier, cellType: MovieGenreCollectionViewCell.self)) { [weak self] _, data, cell in
+                    guard let self = self else { return }
+                cell.setData(data, callback: self.collectionViewCellTapHandler)
+            }
         )
     }
     
@@ -66,5 +58,9 @@ class MovieGenreListViewController: UIViewController {
         
         self.collectionView.allowsSelection = false
         self.collectionView.reloadData()
+    }
+    
+    public func collectionViewCellTapHandler(_ data: MovieGenre) {
+        print(data)
     }
 }
