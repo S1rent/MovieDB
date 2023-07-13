@@ -1,0 +1,6 @@
+framework module Pods_PhilipMovieDB_PhilipMovieDBUITests {
+  umbrella header "Pods-PhilipMovieDB-PhilipMovieDBUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

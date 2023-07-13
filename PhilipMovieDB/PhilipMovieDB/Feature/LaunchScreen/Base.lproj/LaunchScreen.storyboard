@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-pattern-2" translatesAutoresizingMaskIntoConstraints="NO" id="Zdl-gY-f41">
+                                <rect key="frame" x="0.0" y="690" width="393" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="yca-mn-C8T"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpu-Y7-8Sh">
+                                <rect key="frame" x="0.0" y="810" width="393" height="42"/>
+                                <color key="backgroundColor" red="0.41634002329999997" green="0.69117873910000005" blue="0.85884588959999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="VnQ-yw-SmQ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm6-pl-VuZ">
+                                <rect key="frame" x="64" y="260.33333333333331" width="201" height="75.666666666666686"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOVIEDB" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="won-Er-9BQ">
+                                <rect key="frame" x="64" y="336" width="265" height="75.666666666666686"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIN-Nc-3M2">
+                                <rect key="frame" x="64" y="427.66666666666669" width="265" height="8"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="fqs-rV-irp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTE-Np-ngG">
+                                <rect key="frame" x="63.999999999999993" y="443.66666666666669" width="119.33333333333331" height="8"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="kpv-vu-4aQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FTE-Np-ngG" firstAttribute="width" secondItem="JIN-Nc-3M2" secondAttribute="width" multiplier="0.45" id="0m6-BQ-bIi"/>
+                            <constraint firstItem="won-Er-9BQ" firstAttribute="top" secondItem="nm6-pl-VuZ" secondAttribute="bottom" id="38K-fL-KFu"/>
+                            <constraint firstItem="FTE-Np-ngG" firstAttribute="leading" secondItem="JIN-Nc-3M2" secondAttribute="leading" id="4Es-SR-t4N"/>
+                            <constraint firstItem="FTE-Np-ngG" firstAttribute="top" secondItem="JIN-Nc-3M2" secondAttribute="bottom" constant="8" id="7jr-pr-Z2z"/>
+                            <constraint firstItem="nm6-pl-VuZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-128" id="IMe-bd-sz4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="won-Er-9BQ" secondAttribute="trailing" constant="64" id="KBa-CY-OEy"/>
+                            <constraint firstItem="JIN-Nc-3M2" firstAttribute="top" secondItem="won-Er-9BQ" secondAttribute="bottom" constant="16" id="KDh-tx-DdO"/>
+                            <constraint firstItem="won-Er-9BQ" firstAttribute="leading" secondItem="nm6-pl-VuZ" secondAttribute="leading" id="LX3-sx-oHu"/>
+                            <constraint firstAttribute="bottom" secondItem="gpu-Y7-8Sh" secondAttribute="bottom" id="PYE-Dt-i2X"/>
+                            <constraint firstItem="JIN-Nc-3M2" firstAttribute="leading" secondItem="won-Er-9BQ" secondAttribute="leading" id="We6-zd-v8S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zdl-gY-f41" secondAttribute="bottom" id="fGX-pk-Zao"/>
+                            <constraint firstItem="gpu-Y7-8Sh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iAw-Pt-HVt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zdl-gY-f41" secondAttribute="trailing" id="k7k-b4-2Pz"/>
+                            <constraint firstItem="Zdl-gY-f41" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l3H-mM-37s"/>
+                            <constraint firstItem="nm6-pl-VuZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="mTd-5G-83y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nm6-pl-VuZ" secondAttribute="trailing" constant="128" id="uqW-c4-BtP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gpu-Y7-8Sh" secondAttribute="trailing" id="xzg-5V-fwk"/>
+                            <constraint firstItem="JIN-Nc-3M2" firstAttribute="trailing" secondItem="won-Er-9BQ" secondAttribute="trailing" id="z3m-J5-9tV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg-pattern-2" width="180" height="76"/>
+    </resources>
+</document>
