@@ -6,7 +6,7 @@ target 'PhilipMovieDB' do
   use_frameworks!
 
   # Pods for PhilipMovieDB
-pod 'RxSwift'
+    pod 'RxSwift'
     pod 'RxCocoa'
     pod 'NSObject+Rx'
     pod 'RxDataSources'
@@ -14,6 +14,7 @@ pod 'RxSwift'
     pod 'Moya/RxSwift'
     pod 'SDWebImage'
     pod 'SwiftGifOrigin'
+    pod 'FLEX', :configurations => ['Debug']
 
   target 'PhilipMovieDBTests' do
     inherit! :search_paths

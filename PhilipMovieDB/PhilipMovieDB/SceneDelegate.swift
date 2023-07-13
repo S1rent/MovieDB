@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         
-        let viewController = HomeViewController()
+        let viewController = HomeRouter.createHomeModule()
         UIView.transition(
             with: window,
             duration: 0.25,
