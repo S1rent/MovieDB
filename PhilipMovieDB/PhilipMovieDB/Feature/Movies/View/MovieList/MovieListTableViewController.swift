@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MovieListTableViewController: UIViewController {
+class MovieListTableViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -52,6 +52,7 @@ class MovieListTableViewController: UIViewController {
                 guard let self = self else { return }
                 
                 cell.setData(data, self.movieGenre.name ?? "-")
+                cell.selectionStyle = .none
             }
         )
     }
@@ -61,5 +62,18 @@ class MovieListTableViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 180
         self.tableView.allowsSelection = true
+        self.tableView.delegate = self
+    }
+}
+
+extension MovieListTableViewController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let height = scrollView.frame.size.height
+        let contentYOffset = scrollView.contentOffset.y
+        let distanceFromBottom = scrollView.contentSize.height - contentYOffset
+
+        if distanceFromBottom < height {
+            print("You reached end of the table")
+        }
     }
 }
