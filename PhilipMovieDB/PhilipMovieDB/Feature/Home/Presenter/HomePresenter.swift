@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol HomeUseCase {
+protocol HomePresenterUseCase {
     func navigateToMovieGenreList() -> Void
 }
 
-class HomePresenter: HomeUseCase {
+class HomePresenter: HomePresenterUseCase {
     private let router: HomeRouter
   
     init(

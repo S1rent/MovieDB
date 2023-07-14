@@ -9,8 +9,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class MovieGenrePresenter: MovieGenreUseCase {
-    
+protocol MovieGenrePresenterUseCase {
+    func getTrendingMovies() -> Driver<[MovieGenre]>
+    func navigateToMovieList(movieGenre: MovieGenre) -> Void
+}
+
+class MovieGenrePresenter: MovieGenrePresenterUseCase {
     private let router: MovieRouter
     private let useCase: MovieGenreUseCase
   
@@ -24,5 +28,9 @@ class MovieGenrePresenter: MovieGenreUseCase {
   
     func getTrendingMovies() -> Driver<[MovieGenre]> {
         return useCase.getTrendingMovies()
+    }
+    
+    func navigateToMovieList(movieGenre: MovieGenre) {
+        router.navigateToMovieList(movieGenre: movieGenre)
     }
 }

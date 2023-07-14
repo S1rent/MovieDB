@@ -33,4 +33,8 @@ extension UIImage {
         
         return gif(data: imageData)
     }
+    
+    public static func getImagePlaceholderUrl() -> String {
+        return "ic-image-placeholder"
+    }
 }

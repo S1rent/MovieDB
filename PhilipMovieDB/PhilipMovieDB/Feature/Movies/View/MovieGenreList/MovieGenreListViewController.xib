@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="l88-zo-eqt">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="8" y="59" width="377" height="759"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="if5-nr-H24">
                         <size key="itemSize" width="128" height="128"/>
@@ -51,13 +51,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l88-zo-eqt" secondAttribute="trailing" id="1sg-ga-FlH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l88-zo-eqt" secondAttribute="trailing" constant="8" id="1sg-ga-FlH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="l88-zo-eqt" secondAttribute="bottom" id="CmM-ym-XMd"/>
                 <constraint firstItem="6LV-eF-Psq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="R4k-6u-2dk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6LV-eF-Psq" secondAttribute="trailing" id="a6Q-0j-9gv"/>
                 <constraint firstItem="6LV-eF-Psq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="erA-i5-Gfc"/>
                 <constraint firstItem="l88-zo-eqt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xPV-pz-JEj"/>
-                <constraint firstItem="l88-zo-eqt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ySl-he-dOa"/>
+                <constraint firstItem="l88-zo-eqt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="ySl-he-dOa"/>
             </constraints>
             <point key="canvasLocation" x="37" y="20"/>
         </view>

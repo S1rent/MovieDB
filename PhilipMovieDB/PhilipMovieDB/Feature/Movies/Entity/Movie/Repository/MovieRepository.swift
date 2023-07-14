@@ -12,6 +12,7 @@ import Moya
 
 protocol MovieDataSourceProtocol {
     func getMovieGenre() -> Driver<[MovieGenre]>
+    func getMoviesByGenre(genreId: Int) -> Driver<[Movie]>
 }
 
 final class MovieDataSource {
@@ -27,7 +28,7 @@ final class MovieDataSource {
 extension MovieDataSource: MovieDataSourceProtocol {
     func getMovieGenre() -> Driver<[MovieGenre]> {
         let requestToken = MovieTarget.getMovieGenre
-        print("Testing sampe sini")
+        
         return self.provider.rx
             .request(requestToken)
             .map(MovieGenreResponseWrapper.self)
@@ -36,4 +37,18 @@ extension MovieDataSource: MovieDataSourceProtocol {
             }
             .asDriver(onErrorJustReturn: [])
     }
+    
+    func getMoviesByGenre(genreId: Int) -> Driver<[Movie]> {
+        // page idnya langsung dari sini aja
+        let requestToken = MovieTarget.getMoviesByGenre(page: 1, genreId: genreId)
+        
+        return self.provider.rx
+            .request(requestToken)
+            .map(MovieResponseWrapper.self)
+            .map {
+                $0.results ?? []
+            }
+            .asDriver(onErrorJustReturn: [])
+    }
+    
 }

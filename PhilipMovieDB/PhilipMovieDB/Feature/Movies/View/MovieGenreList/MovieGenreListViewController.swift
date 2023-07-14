@@ -14,9 +14,9 @@ class MovieGenreListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let disposeBag: DisposeBag
-    private let presenter: MovieGenrePresenter
+    private let presenter: MovieGenrePresenterUseCase
     
-    init(presenter: MovieGenrePresenter) {
+    init(presenter: MovieGenrePresenterUseCase) {
         self.disposeBag = DisposeBag()
         self.presenter = presenter
         
@@ -61,6 +61,6 @@ class MovieGenreListViewController: UIViewController {
     }
     
     public func collectionViewCellTapHandler(_ data: MovieGenre) {
-        print(data)
+        self.presenter.navigateToMovieList(movieGenre: data)
     }
 }

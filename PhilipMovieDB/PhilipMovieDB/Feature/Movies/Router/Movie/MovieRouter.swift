@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 protocol MovieRouterProtocol {
-    func navigateToMovieList(genreId: Int) -> Void
+    static func createMovieGenreModule() -> MovieGenreListViewController
+    static func createMovieListModule(movieGenre: MovieGenre) -> MovieListTableViewController
+    func navigateToMovieList(movieGenre: MovieGenre) -> Void
 }
 
 class MovieRouter: MovieRouterProtocol {
@@ -27,9 +29,19 @@ class MovieRouter: MovieRouterProtocol {
         return viewController
     }
     
-    public func navigateToMovieList(genreId: Int) {
-//        let viewController = CategoryTableViewController(isSelectCategory: isSelectCategory)
+    public static func createMovieListModule(movieGenre: MovieGenre) -> MovieListTableViewController {
         
-        UIApplication.topViewController()?.navigationController?.pushViewController(UIViewController(), animated: true)
+        let repository = MovieDataSource.shared
+        let interactor = MovieListInteractor(repository: repository)
+        let presenter = MovieListPresenter(useCase: interactor, router: MovieRouter())
+        let viewController = MovieListTableViewController(presenter: presenter, movieGenre: movieGenre)
+        
+        return viewController
+    }
+    
+    public func navigateToMovieList(movieGenre: MovieGenre) {
+        let viewController = MovieRouter.createMovieListModule(movieGenre: movieGenre)
+        
+        UIApplication.topViewController()?.navigationController?.pushViewController(viewController, animated: true)
     }
 }

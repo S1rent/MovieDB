@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol HomeRouterProtocol {
+    static func createHomeModule() -> HomeViewController 
     func navigateToMovieGenreList() -> Void
 }
 
