@@ -30,6 +30,7 @@ public struct Movie: Decodable {
     let title: String?
     let overview: String?
     let adult: Bool?
+    let releaseDate: String?
     
     internal enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -40,6 +41,7 @@ public struct Movie: Decodable {
         case title = "original_title"
         case overview = "overview"
         case adult = "adult"
+        case releaseDate = "release_date"
     }
     
     public init(from decoder: Decoder) throws {
@@ -53,5 +55,6 @@ public struct Movie: Decodable {
         self.title = try values.decodeIfPresent(String.self, forKey: .title)
         self.overview = try values.decodeIfPresent(String.self, forKey: .overview)
         self.adult = try values.decodeIfPresent(Bool.self, forKey: .adult)
+        self.releaseDate = try values.decodeIfPresent(String.self, forKey: .releaseDate)
     }
 }

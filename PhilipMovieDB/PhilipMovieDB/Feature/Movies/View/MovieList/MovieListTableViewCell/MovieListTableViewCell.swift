@@ -13,11 +13,11 @@ class MovieListTableViewCell: UITableViewCell {
     @IBOutlet weak var imageMovie: UIImageView!
     @IBOutlet weak var labelMovieTitle: UILabel!
     @IBOutlet weak var labelAgeRestriction: UILabel!
-    @IBOutlet weak var labelGenre: UILabel!
     @IBOutlet weak var labelRating: UILabel!
     @IBOutlet weak var overviewGradientView: GradientView!
     @IBOutlet weak var labelOverview: UILabel!
     @IBOutlet weak var ageRestrictionView: UIView!
+    @IBOutlet weak var labelReleaseDate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,7 +43,6 @@ class MovieListTableViewCell: UITableViewCell {
     
     public func setData(_ data: Movie, _ genreName: String) {
         self.labelMovieTitle.text = data.title ?? "-"
-        self.labelGenre.text = genreName
         self.labelRating.text = "\(data.voteCount ?? 0)"
         self.labelOverview.text = data.overview ?? "-"
         self.labelAgeRestriction.text = (data.adult ?? false) ? "R13+" : "G"
@@ -52,6 +51,14 @@ class MovieListTableViewCell: UITableViewCell {
         if (data.overview ?? "").isEmpty {
             self.overviewGradientView.isHidden = true
         }
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: data.releaseDate ?? "0001-01-01")!
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        
+        self.labelReleaseDate.text = dateFormatter.string(from: date)
     }
 
 }

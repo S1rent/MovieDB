@@ -11,14 +11,15 @@ import Moya
 internal enum MovieTarget {
     case getMovieGenre
     case getMoviesByGenre(page: Int, genreId: Int)
+    case getMovieDetail(movieId: Int)
+    case getMovieDetailVideo(movieId: Int)
+    case getMovieDetailReview(page: Int, movieId: Int)
 }
 
 extension MovieTarget: TargetType {
     internal var baseURL: URL {
         switch self {
-        case .getMovieGenre:
-            return URL(string: URL.baseURL())!
-        case .getMoviesByGenre:
+        default:
             return URL(string: URL.baseURL())!
         }
     }
@@ -29,12 +30,18 @@ extension MovieTarget: TargetType {
             return "genre/movie/list"
         case .getMoviesByGenre:
             return "discover/movie"
+        case let .getMovieDetail(movieId):
+            return "movie/\(movieId)"
+        case let .getMovieDetailVideo(movieId):
+            return "movie/\(movieId)/videos"
+        case let .getMovieDetailReview(_, movieId):
+            return "movie/\(movieId)/reviews"
         }
     }
     
     internal var method: Moya.Method {
         switch self {
-        case .getMovieGenre, .getMoviesByGenre:
+        default:
             return .get
         }
     }
@@ -52,6 +59,19 @@ extension MovieTarget: TargetType {
                 "page": "\(page)",
                 "with_genres": "\(genreId)",
                 "include_adult": true
+            ]
+        case let .getMovieDetail(movieId):
+            return [
+                "api_key": URL.apiKey()
+            ]
+        case let .getMovieDetailVideo(movieId):
+            return [
+                "api_key": URL.apiKey()
+            ]
+        case let .getMovieDetailReview(page, movieId):
+            return [
+                "api_key": URL.apiKey(),
+                "page": "\(page)"
             ]
         }
     }

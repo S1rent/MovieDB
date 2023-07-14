@@ -11,6 +11,7 @@ import RxCocoa
 
 protocol MovieListPresenterUseCase {
     func getMoviesByGenre(genreId: Int) -> Driver<[Movie]>
+    func navigateToMovieDetail(movie: Movie) -> Void
 }
 
 class MovieListPresenter: MovieListPresenterUseCase {
@@ -27,5 +28,9 @@ class MovieListPresenter: MovieListPresenterUseCase {
   
     func getMoviesByGenre(genreId: Int) -> Driver<[Movie]> {
         return useCase.getMoviesByGenre(genreId: genreId)
+    }
+    
+    func navigateToMovieDetail(movie: Movie) {
+        router.navigateToMovieDetail(movie: movie)
     }
 }

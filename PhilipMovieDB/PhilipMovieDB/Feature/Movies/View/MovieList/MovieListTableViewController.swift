@@ -53,7 +53,11 @@ class MovieListTableViewController: UIViewController, UITableViewDelegate {
                 
                 cell.setData(data, self.movieGenre.name ?? "-")
                 cell.selectionStyle = .none
-            }
+            },
+            self.tableView.rx.modelSelected(Movie.self).asDriver().drive(onNext: { [weak self] data in
+                guard let self = self else { return }
+                self.presenter.navigateToMovieDetail(movie: data)
+            })
         )
     }
     

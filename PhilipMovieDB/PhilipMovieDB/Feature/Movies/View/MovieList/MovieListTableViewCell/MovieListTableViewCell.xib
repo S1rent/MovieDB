@@ -33,32 +33,32 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I93-F6-po9">
-                                <rect key="frame" x="132" y="35.333333333333336" width="85.333333333333314" height="14.333333333333336"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I93-F6-po9" userLabel="Release Date">
+                                <rect key="frame" x="132" y="35.333333333333336" width="74.333333333333314" height="14.333333333333336"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="661-1S-kFM">
-                                <rect key="frame" x="132" y="57.666666666666671" width="85.333333333333314" height="15"/>
+                                <rect key="frame" x="132" y="57.666666666666671" width="74.333333333333314" height="15"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Age Restriction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E31-XU-2Fl">
-                                <rect key="frame" x="132" y="80.666666666666671" width="85.333333333333314" height="14.333333333333329"/>
+                                <rect key="frame" x="132" y="80.666666666666671" width="74.333333333333314" height="14.333333333333329"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Philip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX5-7Y-SGW">
-                                <rect key="frame" x="233.33333333333334" y="35.333333333333336" width="46.666666666666657" height="22.333333333333336"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 January 2023" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX5-7Y-SGW">
+                                <rect key="frame" x="222.33333333333334" y="35.333333333333336" width="57.666666666666657" height="22.333333333333336"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gal-ta-p7d">
-                                <rect key="frame" x="233.33333333333334" y="57.666666666666671" width="46.666666666666657" height="15"/>
+                                <rect key="frame" x="222.33333333333334" y="57.666666666666671" width="57.666666666666657" height="15"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -98,7 +98,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODN-2R-PzF" userLabel="Age Restriction View">
-                                <rect key="frame" x="233.33333333333334" y="76.666666666666671" width="37.000000000000028" height="22.333333333333329"/>
+                                <rect key="frame" x="222.33333333333334" y="76.666666666666671" width="37.000000000000028" height="22.333333333333329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R13+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deN-Po-B9X">
                                         <rect key="frame" x="4" y="4.0000000000000009" width="29" height="14.333333333333336"/>
@@ -161,10 +161,10 @@
                 <outlet property="ageRestrictionView" destination="ODN-2R-PzF" id="Q1k-Q9-mVl"/>
                 <outlet property="imageMovie" destination="BgT-bQ-V3H" id="S0u-LQ-H70"/>
                 <outlet property="labelAgeRestriction" destination="deN-Po-B9X" id="erl-Wl-fQI"/>
-                <outlet property="labelGenre" destination="IX5-7Y-SGW" id="l1H-D2-u2U"/>
                 <outlet property="labelMovieTitle" destination="2gK-z3-LIN" id="ICI-Bf-KOq"/>
                 <outlet property="labelOverview" destination="ufm-Ya-Iab" id="k7i-a1-FBH"/>
                 <outlet property="labelRating" destination="Gal-ta-p7d" id="cSH-hS-xEI"/>
+                <outlet property="labelReleaseDate" destination="IX5-7Y-SGW" id="Fir-Tn-PWL"/>
                 <outlet property="overviewGradientView" destination="4oY-T9-Jyd" id="JFL-k5-N8M"/>
             </connections>
             <point key="canvasLocation" x="16.793893129770993" y="80.985915492957744"/>
