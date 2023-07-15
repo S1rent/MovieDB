@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 protocol MovieListPresenterUseCase {
-    func getMoviesByGenre(genreId: Int) -> Driver<[Movie]>
+    func getMoviesByGenre(genreId: Int, loadTrigger: Driver<Void>) -> Driver<[Movie]>
     func navigateToMovieDetail(movie: Movie) -> Void
 }
 
@@ -26,8 +26,8 @@ class MovieListPresenter: MovieListPresenterUseCase {
         self.router = router
     }
   
-    func getMoviesByGenre(genreId: Int) -> Driver<[Movie]> {
-        return useCase.getMoviesByGenre(genreId: genreId)
+    func getMoviesByGenre(genreId: Int, loadTrigger: Driver<Void>) -> Driver<[Movie]> {
+        return useCase.getMoviesByGenre(genreId: genreId, loadTrigger: loadTrigger)
     }
     
     func navigateToMovieDetail(movie: Movie) {

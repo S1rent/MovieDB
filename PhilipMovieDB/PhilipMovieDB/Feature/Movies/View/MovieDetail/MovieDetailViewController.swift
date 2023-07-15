@@ -11,7 +11,7 @@ import RxCocoa
 import youtube_ios_player_helper
 import SDWebImage
 
-class MovieDetailViewController: UIViewController {
+class MovieDetailViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var overviewGradientView: GradientView!
     @IBOutlet weak var labelMovieTitle: UILabel!
@@ -81,6 +81,7 @@ class MovieDetailViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 141
         self.tableView.allowsSelection = false
+        self.tableView.delegate = self
     }
     
     private func bindUI() {
@@ -139,6 +140,19 @@ class MovieDetailViewController: UIViewController {
         } else {
             let ytKey = data[0].key ?? "-"
             self.youtubePlayerView.load(withVideoId: ytKey)
+        }
+    }
+}
+
+
+extension MovieDetailViewController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let height = scrollView.frame.size.height
+        let contentYOffset = scrollView.contentOffset.y
+        let distanceFromBottom = scrollView.contentSize.height - contentYOffset
+
+        if distanceFromBottom < height {
+            print("You reached end of the table")
         }
     }
 }

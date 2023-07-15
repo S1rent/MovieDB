@@ -16,11 +16,13 @@ class MovieListTableViewController: UIViewController, UITableViewDelegate {
     private let disposeBag: DisposeBag
     private let presenter: MovieListPresenterUseCase
     private let movieGenre: MovieGenre
+    private let loadTrigger: BehaviorRelay<Void>
     
     init(presenter: MovieListPresenter, movieGenre: MovieGenre) {
         self.disposeBag = DisposeBag()
         self.presenter = presenter
         self.movieGenre = movieGenre
+        self.loadTrigger = BehaviorRelay(value: ())
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -48,7 +50,7 @@ class MovieListTableViewController: UIViewController, UITableViewDelegate {
     
     private func bindUI() {
         self.disposeBag.insert(
-            presenter.getMoviesByGenre(genreId: movieGenre.id ?? 1).drive(tableView.rx.items(cellIdentifier: MovieListTableViewCell.identifier, cellType: MovieListTableViewCell.self)) {[weak self] _, data, cell in
+            presenter.getMoviesByGenre(genreId: movieGenre.id ?? 1, loadTrigger: self.loadTrigger.asDriver().debounce(RxTimeInterval.milliseconds(500 ))).drive(tableView.rx.items(cellIdentifier: MovieListTableViewCell.identifier, cellType: MovieListTableViewCell.self)) {[weak self] _, data, cell in
                 guard let self = self else { return }
                 
                 cell.setData(data, self.movieGenre.name ?? "-")
@@ -78,6 +80,7 @@ extension MovieListTableViewController {
 
         if distanceFromBottom < height {
             print("You reached end of the table")
+            self.loadTrigger.accept(())
         }
     }
 }

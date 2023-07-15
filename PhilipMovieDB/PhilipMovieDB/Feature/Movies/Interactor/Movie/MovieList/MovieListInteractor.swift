@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 protocol MovieListUseCase {
-    func getMoviesByGenre(genreId: Int) -> Driver<[Movie]>
+    func getMoviesByGenre(genreId: Int, loadTrigger: Driver<Void>) -> Driver<[Movie]>
 }
 
 public class MovieListInteractor: MovieListUseCase {
@@ -22,7 +22,7 @@ public class MovieListInteractor: MovieListUseCase {
         self.repository = repository
     }
     
-    func getMoviesByGenre(genreId: Int) -> Driver<[Movie]> {
-        repository.getMoviesByGenre(genreId: genreId)
+    func getMoviesByGenre(genreId: Int, loadTrigger: Driver<Void>) -> Driver<[Movie]> {
+        repository.getMoviesByGenre(genreId: genreId, loadTrigger: loadTrigger)
     }
 }

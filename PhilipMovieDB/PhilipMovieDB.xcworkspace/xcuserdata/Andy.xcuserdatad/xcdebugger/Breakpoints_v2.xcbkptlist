@@ -14,8 +14,8 @@
             filePath = "PhilipMovieDB/Feature/Movies/Entity/Movie/Repository/MovieRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "getMovieDetailReview(movieId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "PhilipMovieDB/Feature/Movies/View/MovieDetail/MovieDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "bindUI()"
             landmarkType = "7">
          </BreakpointContent>
