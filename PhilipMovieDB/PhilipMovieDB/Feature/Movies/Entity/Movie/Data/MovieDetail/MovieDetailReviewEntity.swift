@@ -28,11 +28,13 @@ public struct MovieDetailReview: Decodable {
     let author: String?
     let content: String?
     let createdAt: String?
+    let authorDetails: MovieDetailReviewAuthor?
     
     internal enum CodingKeys: String, CodingKey {
         case author = "author"
         case content = "content"
         case createdAt = "created_at"
+        case authorDetails = "author_details"
     }
     
     public init(from decoder: Decoder) throws {
@@ -41,5 +43,20 @@ public struct MovieDetailReview: Decodable {
         self.author = try values.decodeIfPresent(String.self, forKey: .author)
         self.content = try values.decodeIfPresent(String.self, forKey: .content)
         self.createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt)
+        self.authorDetails = try values.decodeIfPresent(MovieDetailReviewAuthor.self, forKey: .authorDetails)
+    }
+}
+
+public struct MovieDetailReviewAuthor: Decodable {
+    let rating: Double?
+    
+    internal enum CodingKeys: String, CodingKey {
+        case rating = "rating"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.rating = try values.decodeIfPresent(Double.self, forKey: .rating)
     }
 }

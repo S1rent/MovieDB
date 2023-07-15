@@ -43,7 +43,7 @@ class MovieListTableViewCell: UITableViewCell {
     
     public func setData(_ data: Movie, _ genreName: String) {
         self.labelMovieTitle.text = data.title ?? "-"
-        self.labelRating.text = "\(data.voteCount ?? 0)"
+        self.labelRating.text = "\(data.voteAverage ?? 0)"
         self.labelOverview.text = data.overview ?? "-"
         self.labelAgeRestriction.text = (data.adult ?? false) ? "R13+" : "G"
         self.ageRestrictionView.backgroundColor = (data.adult ?? false) ? UIColor.red : UIColor.green

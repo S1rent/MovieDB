@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1B992C65146D15FBEB2AE277 /* Pods_PhilipMovieDB_PhilipMovieDBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076C8DF7B24C26B091DD8189 /* Pods_PhilipMovieDB_PhilipMovieDBUITests.framework */; };
+		A11F98FE2A629F5600992DDE /* MovieDetailReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F98FC2A629F5600992DDE /* MovieDetailReviewTableViewCell.swift */; };
+		A11F98FF2A629F5600992DDE /* MovieDetailReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11F98FD2A629F5600992DDE /* MovieDetailReviewTableViewCell.xib */; };
+		A11F99012A62A82000992DDE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F99002A62A82000992DDE /* String+Extensions.swift */; };
 		A1BE76942A5FE3E500DCAB0C /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE76932A5FE3E500DCAB0C /* ErrorTracker.swift */; };
 		A1BE76962A5FE3EE00DCAB0C /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BE76952A5FE3EE00DCAB0C /* ActivityIndicator.swift */; };
 		A1BE769D2A5FE5F200DCAB0C /* spiderman-greetings.gif in Resources */ = {isa = PBXBuildFile; fileRef = A1BE769C2A5FE5F200DCAB0C /* spiderman-greetings.gif */; };
@@ -82,6 +85,9 @@
 		373735DCEB49F71E43E72C81 /* Pods-PhilipMovieDBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhilipMovieDBTests.release.xcconfig"; path = "Target Support Files/Pods-PhilipMovieDBTests/Pods-PhilipMovieDBTests.release.xcconfig"; sourceTree = "<group>"; };
 		93C2F372679DE7FC20742826 /* Pods-PhilipMovieDB-PhilipMovieDBUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhilipMovieDB-PhilipMovieDBUITests.release.xcconfig"; path = "Target Support Files/Pods-PhilipMovieDB-PhilipMovieDBUITests/Pods-PhilipMovieDB-PhilipMovieDBUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9870446B240BCE96D40A49BD /* Pods_PhilipMovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhilipMovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A11F98FC2A629F5600992DDE /* MovieDetailReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailReviewTableViewCell.swift; sourceTree = "<group>"; };
+		A11F98FD2A629F5600992DDE /* MovieDetailReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailReviewTableViewCell.xib; sourceTree = "<group>"; };
+		A11F99002A62A82000992DDE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A1BE76932A5FE3E500DCAB0C /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
 		A1BE76952A5FE3EE00DCAB0C /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		A1BE769C2A5FE5F200DCAB0C /* spiderman-greetings.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "spiderman-greetings.gif"; sourceTree = "<group>"; };
@@ -176,6 +182,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A11F98FB2A629F3700992DDE /* MovieDetailReviewTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A11F98FC2A629F5600992DDE /* MovieDetailReviewTableViewCell.swift */,
+				A11F98FD2A629F5600992DDE /* MovieDetailReviewTableViewCell.xib */,
+			);
+			path = MovieDetailReviewTableViewCell;
+			sourceTree = "<group>";
+		};
 		A1BE768C2A5FE0C700DCAB0C /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +208,7 @@
 				A1EB94952A5FFB1A00FBEAC5 /* URL+Extensions.swift */,
 				A1EB949E2A5FFEDE00FBEAC5 /* UIApplication+Extensions.swift */,
 				A1EB94A72A60172000FBEAC5 /* CAGradientLayer+Extensions.swift */,
+				A11F99002A62A82000992DDE /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -529,6 +545,7 @@
 		A1EB94BC2A61BA1E00FBEAC5 /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
+				A11F98FB2A629F3700992DDE /* MovieDetailReviewTableViewCell */,
 				A1EB94BD2A61BA3100FBEAC5 /* MovieDetailViewController.swift */,
 				A1EB94BE2A61BA3100FBEAC5 /* MovieDetailViewController.xib */,
 			);
@@ -687,6 +704,7 @@
 				A1D2F1902A5FA4D1007E4B10 /* LaunchScreen.storyboard in Resources */,
 				A1BE769D2A5FE5F200DCAB0C /* spiderman-greetings.gif in Resources */,
 				A1D2F18D2A5FA4D1007E4B10 /* Assets.xcassets in Resources */,
+				A11F98FF2A629F5600992DDE /* MovieDetailReviewTableViewCell.xib in Resources */,
 				A1EB94762A5FEC0A00FBEAC5 /* HomeViewController.xib in Resources */,
 				A1EB947C2A5FF48500FBEAC5 /* MovieGenreListViewController.xib in Resources */,
 			);
@@ -831,12 +849,14 @@
 				A1EB949D2A5FFE8D00FBEAC5 /* MovieRouter.swift in Sources */,
 				A1EB94752A5FEC0A00FBEAC5 /* HomeViewController.swift in Sources */,
 				A1D2F18B2A5FA4D0007E4B10 /* PhilipMovieDB.xcdatamodeld in Sources */,
+				A11F99012A62A82000992DDE /* String+Extensions.swift in Sources */,
 				A1EB94A32A6008EF00FBEAC5 /* HomeRouter.swift in Sources */,
 				A1EB94852A5FF63E00FBEAC5 /* UIView+Extensions.swift in Sources */,
 				A1EB94922A5FF94900FBEAC5 /* MovieRepository.swift in Sources */,
 				A1EB94702A5FEAE800FBEAC5 /* Observable+Extensions.swift in Sources */,
 				A1EB94CD2A61C4AC00FBEAC5 /* MovieDetailReviewEntity.swift in Sources */,
 				A1EB94BB2A61421D00FBEAC5 /* MovieListPresenter.swift in Sources */,
+				A11F98FE2A629F5600992DDE /* MovieDetailReviewTableViewCell.swift in Sources */,
 				A1EB94942A5FFAD400FBEAC5 /* MovieTarget.swift in Sources */,
 				A1EB94C72A61BA7E00FBEAC5 /* MovieDetailEntity.swift in Sources */,
 				A1EB94B82A6141A900FBEAC5 /* MovieListInteractor.swift in Sources */,

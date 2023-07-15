@@ -60,15 +60,15 @@ extension MovieTarget: TargetType {
                 "with_genres": "\(genreId)",
                 "include_adult": true
             ]
-        case let .getMovieDetail(movieId):
+        case .getMovieDetail:
             return [
                 "api_key": URL.apiKey()
             ]
-        case let .getMovieDetailVideo(movieId):
+        case .getMovieDetailVideo:
             return [
                 "api_key": URL.apiKey()
             ]
-        case let .getMovieDetailReview(page, movieId):
+        case let .getMovieDetailReview(page, _):
             return [
                 "api_key": URL.apiKey(),
                 "page": "\(page)"

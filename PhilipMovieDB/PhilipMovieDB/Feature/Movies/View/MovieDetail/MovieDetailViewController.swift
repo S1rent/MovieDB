@@ -59,6 +59,7 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupView()
+        self.setupTableView()
         self.bindUI()
     }
     
@@ -75,6 +76,13 @@ class MovieDetailViewController: UIViewController {
         self.imagePoster.sd_imageIndicator = SDWebImageActivityIndicator.white
     }
     
+    private func setupTableView() {
+        self.tableView.register(MovieDetailReviewTableViewCell.nib, forCellReuseIdentifier: MovieDetailReviewTableViewCell.identifier)
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 141
+        self.tableView.allowsSelection = false
+    }
+    
     private func bindUI() {
         self.disposeBag.insert(
             presenter.getMovieDetail(movieId: movie.id ?? 1).drive(onNext: { [weak self] data in
@@ -88,7 +96,11 @@ class MovieDetailViewController: UIViewController {
                 guard let self = self else { return }
                 
                 self.setVideoData(data)
-            })
+            }),
+            presenter.getMovieDetailReview(movieId: movie.id ?? 1).drive(tableView.rx.items(cellIdentifier: MovieDetailReviewTableViewCell.identifier, cellType: MovieDetailReviewTableViewCell.self)) { _, data, cell in
+                cell.setData(data)
+                cell.layoutIfNeeded()
+            }
         )
     }
     

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="131" id="KGk-i7-Jjw" customClass="MovieDetailReviewTableViewCell" customModule="PhilipMovieDB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="141"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="141"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-user-white" translatesAutoresizingMaskIntoConstraints="NO" id="AB3-CJ-92S">
+                        <rect key="frame" x="16" y="16" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="rZW-yh-B4c"/>
+                            <constraint firstAttribute="width" constant="32" id="tl3-qN-JBO"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd3-jt-Y5m">
+                        <rect key="frame" x="64" y="21.333333333333329" width="240" height="21.666666666666671"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsw-lZ-eIn" userLabel="Rating &amp; Create Date">
+                        <rect key="frame" x="16" y="56" width="288" height="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oqf-Sm-HNN" customClass="GradientView" customModule="PhilipMovieDB" customModuleProvider="target">
+                        <rect key="frame" x="16" y="81" width="288" height="33"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdH-uF-otM" userLabel="Review">
+                                <rect key="frame" x="8" y="8" width="272" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CdH-uF-otM" firstAttribute="leading" secondItem="Oqf-Sm-HNN" secondAttribute="leading" constant="8" id="M9e-h5-Koe"/>
+                            <constraint firstAttribute="bottom" secondItem="CdH-uF-otM" secondAttribute="bottom" constant="8" id="Sx1-d9-LFg"/>
+                            <constraint firstAttribute="trailing" secondItem="CdH-uF-otM" secondAttribute="trailing" constant="8" id="eGk-Rr-adV"/>
+                            <constraint firstItem="CdH-uF-otM" firstAttribute="top" secondItem="Oqf-Sm-HNN" secondAttribute="top" constant="8" id="ocx-J2-XHx"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                <real key="value" value="0.25"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" red="0.42024391890000001" green="0.69110262389999999" blue="0.862767756" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="AB3-CJ-92S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="JhI-2o-hsP"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Oqf-Sm-HNN" secondAttribute="bottom" constant="16" id="Ji0-Ka-fcB"/>
+                    <constraint firstItem="wsw-lZ-eIn" firstAttribute="top" secondItem="AB3-CJ-92S" secondAttribute="bottom" constant="8" id="NuG-u9-hJf"/>
+                    <constraint firstItem="AB3-CJ-92S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="SAi-kU-wXw"/>
+                    <constraint firstItem="Oqf-Sm-HNN" firstAttribute="leading" secondItem="wsw-lZ-eIn" secondAttribute="leading" id="UiH-iE-Wr2"/>
+                    <constraint firstItem="vd3-jt-Y5m" firstAttribute="centerY" secondItem="AB3-CJ-92S" secondAttribute="centerY" id="V45-uX-yPw"/>
+                    <constraint firstItem="Oqf-Sm-HNN" firstAttribute="trailing" secondItem="wsw-lZ-eIn" secondAttribute="trailing" id="d9y-3E-8CJ"/>
+                    <constraint firstAttribute="trailing" secondItem="vd3-jt-Y5m" secondAttribute="trailing" constant="16" id="eSb-1p-EmV"/>
+                    <constraint firstItem="Oqf-Sm-HNN" firstAttribute="top" secondItem="wsw-lZ-eIn" secondAttribute="bottom" constant="8" id="jvn-2g-1PS"/>
+                    <constraint firstAttribute="trailing" secondItem="wsw-lZ-eIn" secondAttribute="trailing" constant="16" id="pyh-ad-IBV"/>
+                    <constraint firstItem="wsw-lZ-eIn" firstAttribute="leading" secondItem="AB3-CJ-92S" secondAttribute="leading" id="rsh-Ex-jja"/>
+                    <constraint firstItem="vd3-jt-Y5m" firstAttribute="leading" secondItem="AB3-CJ-92S" secondAttribute="trailing" constant="16" id="sWM-3S-j0L"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelRatingCreateDate" destination="wsw-lZ-eIn" id="7e4-EF-Px7"/>
+                <outlet property="labelReview" destination="CdH-uF-otM" id="AyA-eZ-v8y"/>
+                <outlet property="labelUsername" destination="vd3-jt-Y5m" id="xRw-s8-LE9"/>
+                <outlet property="reviewGradientView" destination="Oqf-Sm-HNN" id="AgD-5B-MNE"/>
+            </connections>
+            <point key="canvasLocation" x="-18.320610687022899" y="50.352112676056343"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic-user-white" width="512" height="512"/>
+    </resources>
+</document>
