@@ -12,7 +12,7 @@ import RxCocoa
 protocol MovieDetailPresenterUseCase {
     func getMovieDetail(movieId: Int) -> Driver<MovieDetail?>
     func getMovieDetailVideo(movieId: Int) -> Driver<[MovieDetailVideo]>
-    func getMovieDetailReview(movieId: Int) -> Driver<[MovieDetailReview]>
+    func getMovieDetailReview(movieId: Int, loadTrigger: Driver<Void>) -> Driver<[MovieDetailReview]>
 }
 
 class MovieDetailPresenter: MovieDetailPresenterUseCase {
@@ -35,7 +35,7 @@ class MovieDetailPresenter: MovieDetailPresenterUseCase {
         return useCase.getMovieDetailVideo(movieId: movieId)
     }
     
-    func getMovieDetailReview(movieId: Int) -> Driver<[MovieDetailReview]> {
-        return useCase.getMovieDetailReview(movieId: movieId)
+    func getMovieDetailReview(movieId: Int, loadTrigger: Driver<Void>) -> Driver<[MovieDetailReview]> {
+        return useCase.getMovieDetailReview(movieId: movieId, loadTrigger: loadTrigger)
     }
 }

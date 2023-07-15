@@ -29,6 +29,7 @@ class MovieDetailViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var youtubePlayerViewHeightConstant: NSLayoutConstraint!
     
+    private let loadTrigger: BehaviorRelay<Void>
     private let presenter: MovieDetailPresenter
     private let disposeBag: DisposeBag
     private let movie: Movie
@@ -37,6 +38,7 @@ class MovieDetailViewController: UIViewController, UITableViewDelegate {
         self.disposeBag = DisposeBag()
         self.presenter = presenter
         self.movie = movie
+        self.loadTrigger = BehaviorRelay(value: ())
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -98,7 +100,7 @@ class MovieDetailViewController: UIViewController, UITableViewDelegate {
                 
                 self.setVideoData(data)
             }),
-            presenter.getMovieDetailReview(movieId: movie.id ?? 1).drive(tableView.rx.items(cellIdentifier: MovieDetailReviewTableViewCell.identifier, cellType: MovieDetailReviewTableViewCell.self)) { _, data, cell in
+            presenter.getMovieDetailReview(movieId: movie.id ?? 1, loadTrigger: self.loadTrigger.asDriver().debounce(RxTimeInterval.milliseconds(500))).drive(tableView.rx.items(cellIdentifier: MovieDetailReviewTableViewCell.identifier, cellType: MovieDetailReviewTableViewCell.self)) { _, data, cell in
                 cell.setData(data)
                 cell.layoutIfNeeded()
             }
@@ -153,6 +155,7 @@ extension MovieDetailViewController {
 
         if distanceFromBottom < height {
             print("You reached end of the table")
+            self.loadTrigger.accept(())
         }
     }
 }

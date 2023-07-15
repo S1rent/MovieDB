@@ -15,20 +15,28 @@ protocol MovieDataSourceProtocol {
     func getMoviesByGenre(genreId: Int, loadTrigger: Driver<Void>) -> Driver<[Movie]>
     func getMovieDetail(movieId: Int) -> Driver<MovieDetail?>
     func getMovieDetailVideo(movieId: Int) -> Driver<[MovieDetailVideo]>
-    func getMovieDetailReview(movieId: Int) -> Driver<[MovieDetailReview]>
+    func getMovieDetailReview(movieId: Int, loadTrigger: Driver<Void>) -> Driver<[MovieDetailReview]>
 }
 
 final class MovieDataSource {
     let provider: MoyaProvider<MovieTarget>
+    
     let movieListPage: BehaviorRelay<Int>
     let movieList: BehaviorRelay<[Movie]>
+    
+    let reviewPage: BehaviorRelay<Int>
+    let reviewList: BehaviorRelay<[MovieDetailReview]>
     
     static let shared: MovieDataSource = MovieDataSource()
     
     private init() {
         self.provider = MoyaProvider<MovieTarget>()
+        
         self.movieListPage = BehaviorRelay<Int>(value: 1)
         self.movieList = BehaviorRelay<[Movie]>(value: [])
+        
+        self.reviewPage = BehaviorRelay<Int>(value: 1)
+        self.reviewList = BehaviorRelay<[MovieDetailReview]>(value: [])
     }
 }
 
@@ -96,16 +104,30 @@ extension MovieDataSource: MovieDataSourceProtocol {
             .asDriver(onErrorJustReturn: [])
     }
     
-    func getMovieDetailReview(movieId: Int) -> Driver<[MovieDetailReview]> {
-        // page idnya langsung dari sini aja
-        let requestToken = MovieTarget.getMovieDetailReview(page: 1, movieId: movieId)
+    func getMovieDetailReview(movieId: Int, loadTrigger: Driver<Void>) -> Driver<[MovieDetailReview]> {
+        let result = Driver.zip(loadTrigger, reviewPage.asDriver()).flatMapLatest { tuple -> Driver<[MovieDetailReview]> in
+            
+            // page idnya langsung dari sini aja
+            let requestToken = MovieTarget.getMovieDetailReview(page: tuple.1, movieId: movieId)
+            
+            self.reviewPage.accept(tuple.1 + 1)
+            
+            return self.provider.rx
+                .request(requestToken)
+                .map(MovieDetailReviewResponseWrapper.self)
+                .map {
+                    $0.results ?? []
+                }
+                .asDriver(onErrorJustReturn: [])
+        }
         
-        return self.provider.rx
-            .request(requestToken)
-            .map(MovieDetailReviewResponseWrapper.self)
-            .map {
-                $0.results ?? []
-            }
-            .asDriver(onErrorJustReturn: [])
+        return Driver.zip(reviewList.asDriver(), result).flatMapLatest { tuple in
+            var newArray: [MovieDetailReview] = []
+            newArray.append(contentsOf: tuple.0)
+            newArray.append(contentsOf: tuple.1)
+            self.reviewList.accept(newArray)
+            
+            return Driver.just(newArray)
+        }
     }
 }
